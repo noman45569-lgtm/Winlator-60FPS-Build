@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10.2)
+project("winlator")
+add_library(winlator SHARED native-lib.cpp)
+find_library(log-lib log)
+target_link_libraries(winlator ${log-lib})
