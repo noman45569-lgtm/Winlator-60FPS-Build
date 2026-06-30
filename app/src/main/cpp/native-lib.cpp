@@ -1,5 +1,7 @@
-cmake_minimum_required(VERSION 3.10.2)
-project("winlator")
-add_library(winlator SHARED app/src/main/cpp/native-lib.cpp)
-find_library(log-lib log)
-target_link_libraries(winlator ${log-lib})
+#include <jni.h>
+#include <string>
+
+extern "C" JNIEXPORT jstring JNICALL
+Java_com_winlator_core_NativeLib_stringFromJNI(JNIEnv* env, jobject obj) {
+    return env->NewStringUTF("60FPS_Optimization_Active");
+}
