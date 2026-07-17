@@ -1,0 +1,6 @@
+# AI Optimization for smoother performance in large battles
+# This reduces AI calculation frequency to gain FPS
+("game_get_ai_behavior", [
+    (assign, ":ai_interval", 4), # Higher value = lighter CPU load
+    (set_trigger_result, ":ai_interval"),
+]),
